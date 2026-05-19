@@ -227,6 +227,34 @@
     align-items: center;
   }
 
+  .hero-bg-photo {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://globalharborsolutionsllc.github.io/solidrisegaragedoorrepair.github.io/backroundwebsite_2.jpeg');
+    background-size: cover;
+    background-position: center 80%;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transform: scale(1.04);
+    animation: slow-zoom 18s ease-in-out infinite alternate;
+  }
+  @keyframes slow-zoom {
+    0%   { transform: scale(1.04); }
+    100% { transform: scale(1.12); }
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(10, 10, 10, 0.82) 0%,
+      rgba(14, 14, 14, 0.70) 50%,
+      rgba(10, 10, 10, 0.50) 100%
+    );
+    z-index: 1;
+  }
+
   .hero-bg-grid {
     position: absolute;
     inset: 0;
@@ -234,7 +262,7 @@
       linear-gradient(rgba(245,158,11,0.04) 1px, transparent 1px),
       linear-gradient(90deg, rgba(245,158,11,0.04) 1px, transparent 1px);
     background-size: 60px 60px;
-    z-index: 0;
+    z-index: 2;
   }
 
   .hero-bg-glow {
@@ -243,8 +271,8 @@
     right: -10%;
     width: 700px;
     height: 700px;
-    background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 65%);
-    z-index: 0;
+    background: radial-gradient(circle, rgba(245,158,11,0.10) 0%, transparent 65%);
+    z-index: 2;
   }
   .hero-bg-glow2 {
     position: absolute;
@@ -252,8 +280,8 @@
     left: -10%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 65%);
-    z-index: 0;
+    background: radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 65%);
+    z-index: 2;
   }
 
   .hero-inner {
@@ -265,7 +293,7 @@
     gap: 60px;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 3;
     width: 100%;
   }
 
@@ -1036,6 +1064,8 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg-photo"></div>
+  <div class="hero-bg-overlay"></div>
   <div class="hero-bg-grid"></div>
   <div class="hero-bg-glow"></div>
   <div class="hero-bg-glow2"></div>
