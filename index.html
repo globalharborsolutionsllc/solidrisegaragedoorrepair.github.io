@@ -1617,7 +1617,7 @@
 <script>
   // DATA
   const services = [
-    { icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`, title: "Spring Replacement", desc: "Torsion & extension spring replacement for all door brands. Fast, same-day service." },
+    { icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`, title: "Spring Replacement", desc: "Torsion & extension spring replacement for all door brands. Fast, same-day service.", url: "spring-replacement.html" },
     { icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`, title: "Opener Installation", desc: "Belt drive, chain drive, screw drive & jackshaft opener installation from top brands." },
     { icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>`, title: "Opener Repair", desc: "Diagnose and fix motor, sensors, drive gear, and logic board issues on any opener." },
     { icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M14 14h7v7h-7z"/><path d="M3 14h7v7H3z"/></svg>`, title: "Cable Repair", desc: "Snapped or frayed lifting cable? We replace both cables simultaneously for balanced operation." },
@@ -1682,9 +1682,15 @@
       <div class="service-icon">${s.icon}</div>
       <h3>${s.title}</h3>
       <p>${s.desc}</p>
-      <span class="service-link">Get Service →</span>
+      <span class="service-link">${s.url ? 'Learn More →' : 'Get Service →'}</span>
     `;
-    card.addEventListener('click', () => window.location.href = 'tel:6502504385');
+    card.addEventListener('click', () => {
+      if (s.url) {
+        window.location.href = s.url;
+      } else {
+        window.location.href = 'tel:6502504385';
+      }
+    });
     servicesGrid.appendChild(card);
   });
 
